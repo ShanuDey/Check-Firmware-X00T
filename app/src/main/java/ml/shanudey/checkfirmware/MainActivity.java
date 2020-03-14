@@ -1,9 +1,12 @@
 package ml.shanudey.checkfirmware;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,11 +25,15 @@ public class MainActivity extends AppCompatActivity {
     public static final String API_URL = "https://api.myjson.com/bins/8ay66";
     private String timeStamp;
     private RequestQueue requestQueue;
+    private TextView tv_curFW, tv_supportDevelopment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tv_curFW = findViewById(R.id.tv_curFW);
+        tv_supportDevelopment = findViewById(R.id.tv_supportDevelopemnt);
 
         String res = Utils.readFile(FIRMWARE_VERSION_FILEPATH);
 //        Log.v("result",res);
@@ -41,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(this);
         parseJSON();
-
     }
 
     private void parseJSON(){
