@@ -22,7 +22,7 @@ import ml.shanudey.root.Utils;
 
 public class MainActivity extends AppCompatActivity {
     private static final String FIRMWARE_VERSION_FILEPATH = "/firmware/verinfo/ver_info.txt";
-    public static final String API_URL = "https://api.myjson.com/bins/8ay66";
+    public static final String API_URL = "https://raw.githubusercontent.com/ShanuDey/Check-Firmware-X00T/master/api/firmware.json";
     private String timeStamp;
     private RequestQueue requestQueue;
     private TextView tv_curFW, tv_supportDevelopment;
