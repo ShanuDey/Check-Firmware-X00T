@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -39,17 +40,23 @@ public class MainActivity extends AppCompatActivity {
 
         String res = Utils.readFile(FIRMWARE_VERSION_FILEPATH);
 //        Log.v("result",res);
-        for (String s : res.split(",")){
-//            Log.v("forloop ",s);
-            if (s.contains("Time_Stamp")){
-//                Log.v("line",s);
-                timeStamp = s.split(":")[1].substring(2,12);
-            }
-        }
-        Log.v("Firmware Date:",timeStamp);
 
-        requestQueue = Volley.newRequestQueue(this);
-        parseJSON();
+        if(res == null){
+            Toast.makeText(this, "Root Permission Required", Toast.LENGTH_SHORT).show();
+            tv_curFW.setText("Root Permission Required");
+        }else {
+            for (String s : res.split(",")) {
+//            Log.v("forloop ",s);
+                if (s.contains("Time_Stamp")) {
+//                Log.v("line",s);
+                    timeStamp = s.split(":")[1].substring(2, 12);
+                }
+            }
+            Log.v("Firmware Date:", timeStamp);
+
+            requestQueue = Volley.newRequestQueue(this);
+            parseJSON();
+        }
     }
 
     private void parseJSON(){
@@ -69,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
+                Toast.makeText(MainActivity.this, "Internet Required", Toast.LENGTH_SHORT).show();
+                tv_curFW.setText("Internet Required");
             }
         });
         requestQueue.add(jsonObjectRequest);
