@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         tv_curFW = findViewById(R.id.tv_curFW);
         tv_supportDevelopment = findViewById(R.id.tv_supportDevelopemnt);
 
+        tv_supportDevelopment.setMovementMethod(LinkMovementMethod.getInstance());
+
         String res = Utils.readFile(FIRMWARE_VERSION_FILEPATH);
 //        Log.v("result",res);
         for (String s : res.split(",")){
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             String currentFirmware = response.getString(timeStamp);
                             Log.v("current Firmware", currentFirmware);
+                            tv_curFW.setText("Firmware Version : "+currentFirmware);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
