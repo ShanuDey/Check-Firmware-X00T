@@ -24,7 +24,6 @@ import ml.shanudey.root.Utils;
 
 public class MainActivity extends AppCompatActivity {
     private static final String FIRMWARE_VERSION_FILEPATH = "/firmware/verinfo/ver_info.txt";
-    public static final String API_URL = "https://raw.githubusercontent.com/ShanuDey/Check-Firmware-X00T/master/api/firmware.json";
     private String timeStamp;
     private RequestQueue requestQueue;
     private TextView tv_curFW, tv_supportDevelopment,tv_downloadFirmware;
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void parseJSON(){
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, API_URL,null,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, getString(R.string.api_url),null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
