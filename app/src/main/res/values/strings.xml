@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Check Firmware X00T</string>
+    <string name="app_name">Firmware Checker X00T</string>
     <string name="action_about">About</string>
     <string name="support_development"><a href="https://paypal.me/ShanuDey">Support Development</a></string>
     <string name="author">Developed by Shanu Dey</string>

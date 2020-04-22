@@ -1,6 +1,5 @@
-package ml.shanudey.checkfirmware;
+package ml.shanudey.firmwarechecker;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;

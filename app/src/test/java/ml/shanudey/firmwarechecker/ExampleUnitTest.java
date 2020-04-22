@@ -1,4 +1,4 @@
-package ml.shanudey.checkfirmware;
+package ml.shanudey.firmwarechecker;
 
 import org.junit.Test;
 
