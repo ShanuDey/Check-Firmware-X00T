@@ -13,7 +13,7 @@
         android:id="@+id/tv_curFW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="8"
+        android:layout_weight="3"
         android:gravity="center"
         android:text="Firmware Version: "
         android:textSize="30sp"
@@ -21,6 +21,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="@string/download_firmware"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_curFW" />
 
     <TextView
         android:id="@+id/textView2"
