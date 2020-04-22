@@ -3,5 +3,5 @@
     <string name="action_about">About</string>
     <string name="support_development"><a href="https://paypal.me/ShanuDey">Support Development</a></string>
     <string name="author">Developed by Shanu Dey</string>
-    <string name="download_firmware">Download Firmware</string>
+    <string name="download_firmware"><a href="https://www.pling.com/p/1325098#files-panel">Download Firmware</a></string>
 </resources>

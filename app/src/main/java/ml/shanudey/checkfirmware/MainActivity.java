@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String API_URL = "https://raw.githubusercontent.com/ShanuDey/Check-Firmware-X00T/master/api/firmware.json";
     private String timeStamp;
     private RequestQueue requestQueue;
-    private TextView tv_curFW, tv_supportDevelopment;
+    private TextView tv_curFW, tv_supportDevelopment,tv_downloadFirmware;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         tv_curFW = findViewById(R.id.tv_curFW);
         tv_supportDevelopment = findViewById(R.id.tv_supportDevelopemnt);
+        tv_downloadFirmware = findViewById(R.id.tv_download);
 
         tv_supportDevelopment.setMovementMethod(LinkMovementMethod.getInstance());
+        tv_downloadFirmware.setMovementMethod(LinkMovementMethod.getInstance());
 
         FloatingActionButton fab = findViewById(R.id.floating_action_button);
         fab.setOnClickListener(new View.OnClickListener() {
